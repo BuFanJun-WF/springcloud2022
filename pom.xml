@@ -11,6 +11,7 @@
   <modules>
     <module>cloud-provider-payment8001</module>
     <module>cloud-consumer-order80</module>
+      <module>cloud-api-commons</module>
   </modules>
 
   <!-- 作为父工程打包要设置为pom文件，表示是总的父工程 -->
