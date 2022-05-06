@@ -18,6 +18,8 @@
       <module>cloud-eureka-server7002</module>
       <module>cloud-zookeeper-provider-payment8004</module>
       <module>cloud-zookeeper-consumer-order80</module>
+      <module>cloud-consul-provider-payment8006</module>
+      <module>cloud-consul-consumer-order80</module>
   </modules>
 
   <!-- 作为父工程打包要设置为pom文件，表示是总的父工程 -->
