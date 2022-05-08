@@ -21,6 +21,8 @@
       <module>cloud-consul-provider-payment8006</module>
       <module>cloud-consul-consumer-order80</module>
       <module>cloud-feign-consumer-order80</module>
+    <module>cloud-hystrix-provider-payment8001</module>
+      <module>cloud-feign-hystrix-consumer-order80</module>
   </modules>
 
   <!-- 作为父工程打包要设置为pom文件，表示是总的父工程 -->
