@@ -26,6 +26,7 @@
       <module>cloud-gateway-gateway9527</module>
       <module>cloudalibaba-provider-payment9001</module>
       <module>cloudalibaba-consumer-nacos-order83</module>
+      <module>cloudalibaba-config-nacos-client3377</module>
   </modules>
 
   <!-- 作为父工程打包要设置为pom文件，表示是总的父工程 -->
