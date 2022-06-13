@@ -1,6 +1,7 @@
 package com.wangfan.springcloud.service.impl;
 
 import cn.hutool.core.util.IdUtil;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.wangfan.springcloud.service.PaymentService;
@@ -17,6 +18,8 @@ import java.util.concurrent.TimeUnit;
  */
 
 @Service
+// 表示在Hystrix服务降级中，如果@HystrixCommand没有指定降价回调方法，就调用下面的统一的方法
+@DefaultProperties(defaultFallback = "paymentTimeOutFallbackMethod")
 public class PaymentServiceImpl implements PaymentService {
 
     /**
