@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients // 表示开启feign
 public class OrderFeignMain80 {
     public static void main(String[] args) {
         SpringApplication.run(OrderFeignMain80.class,args);

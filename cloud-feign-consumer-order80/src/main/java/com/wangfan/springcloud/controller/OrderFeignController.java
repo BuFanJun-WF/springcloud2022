@@ -21,6 +21,7 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderFeignController {
 
+    // 注入服务接口
     @Resource
     private PaymentFeignService paymentFeignService;
 
@@ -28,5 +29,16 @@ public class OrderFeignController {
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
         return paymentFeignService.getPaymentById(id);
     }
+
+    /**
+     * 测试超时程序的方法
+     * @return
+     */
+    @GetMapping(value = "/consumer/payment/feign/timeout")
+    public String paymentFeignTimeOut()
+    {
+        return paymentFeignService.paymentFeignTimeOut();
+    }
+
 
 }

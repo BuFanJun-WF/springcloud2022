@@ -34,10 +34,13 @@ public class OrderController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    // 可以获取注册中心上的服务列表
     @Resource
     private DiscoveryClient discoveryClient;
 
-    @Resource
+    // 注入一个接口实现类
+    @Resource // 通过变量名进行注入
     private LoadBalancer loadBalancer;
 
     @GetMapping("/consumer/payment/create")

@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 public class OrderConsulController {
+    // 从注册中心中获取服务连接，consul-provider-payment
     public static final String INVOKE_URL = "http://consul-provider-payment";
 
     @Autowired
