@@ -2,8 +2,16 @@ server:
   port: 7001
 
 eureka:
+
+  server:
+    # 出厂默认自我保护机制时开启的，true为开启
+    #关闭自我保护机制，保证不可用服务被及时踢除
+    enable-self-preservation: false
+    # enable-self-preservation: true
+
   instance:
-    hostname: eureka7001.com #eureka服务端的实例名称
+    hostname: eureka7001.com #eureka服务端的实例名称，在hosts中配置对应网址
+    # hostname: localhost #eureka服务端的实例名称
   client:
     #false表示不向注册中心注册自己。
     register-with-eureka: false
@@ -11,5 +19,5 @@ eureka:
     fetch-registry: false
     service-url:
       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
-       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      # defaultZone: http://eureka7002.com:7002/eureka/ # 向7002服务器进行注册
+      #  defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7002.com:7002/eureka/ # 构建集群时，相互注册相互守望，所以向7002服务器进行注册

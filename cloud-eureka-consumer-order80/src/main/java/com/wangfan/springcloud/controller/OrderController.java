@@ -26,8 +26,10 @@ import java.util.List;
 @Slf4j
 public class OrderController {
 
+    // 这个写死服务的端口
     // public static final String PAYMENT_URL = "http://localhost:8001";
 
+    // 通过在eureka上注册过的微服务名称调用
     public static final String PAYMENT_URL = "http://CLOUD-EUREKA-PAYMENT-SERVICE";
 
     @Resource

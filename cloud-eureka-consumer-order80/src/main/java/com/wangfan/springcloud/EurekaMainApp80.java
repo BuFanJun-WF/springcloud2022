@@ -16,7 +16,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-@RibbonClient(name = "cloud-eureka-payment-service", configuration = MySelfRule.class) // 前面的name表示我要去访问的什么服务
+// @RibbonClient(name = "cloud-eureka-payment-service", configuration = MySelfRule.class) // 前面的name表示我要去访问的什么服务
 public class EurekaMainApp80 {
     public static void main(String[] args) {
         SpringApplication.run(EurekaMainApp80.class, args);

@@ -11,13 +11,13 @@ import org.springframework.web.client.RestTemplate;
  * @ClassName ApplicationContextConfig
  * @Author wangfan
  * @Date 2022-05-05
- * @Description
+ * @Description 测试在配置文件中启动@LoadBalanced注解，给http调用进行负载均衡
  */
 @Configuration
 public class ApplicationContextConfig {
 
     @Bean
-    // @LoadBalanced //使用@LoadBalanced注解赋予RestTemplate负载均衡的能力
+    @LoadBalanced //使用@LoadBalanced注解赋予RestTemplate负载均衡的能力
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }

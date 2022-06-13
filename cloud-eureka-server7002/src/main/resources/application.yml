@@ -2,6 +2,12 @@ server:
   port: 7002
 
 eureka:
+  server:
+    # 出厂默认自我保护机制时开启的，true为开启
+    #关闭自我保护机制，保证不可用服务被及时踢除
+    enable-self-preservation: false
+    # enable-self-preservation: true
+
   instance:
     hostname: eureka7002.com #eureka服务端的实例名称
   client:

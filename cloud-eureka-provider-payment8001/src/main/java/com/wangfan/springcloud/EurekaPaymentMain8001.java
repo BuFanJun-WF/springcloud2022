@@ -13,8 +13,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 
 @SpringBootApplication
-@EnableEurekaClient
-@EnableDiscoveryClient
+@EnableEurekaClient // 表示能注册为eurekaClient
+@EnableDiscoveryClient // 对于注册进eureka的微服务，可以通过服务发现来获取该服务的信息
 public class EurekaPaymentMain8001 {
     public static void main(String[] args) {
         SpringApplication.run(EurekaPaymentMain8001.class, args);
