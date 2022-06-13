@@ -17,6 +17,8 @@ import javax.annotation.Resource;
 @RestController
 @Slf4j
 public class ZookeeperOrderController {
+
+    // 从注册中心zookeeper获取服务名
     public static final String INVOKE_URL = "http://cloud-zookeeper-provider-payment";
 
     @Resource
@@ -25,6 +27,7 @@ public class ZookeeperOrderController {
     @GetMapping(value = "/consumer/payment/zk")
     public String paymentInfo() {
         String result = restTemplate.getForObject(INVOKE_URL + "/payment/zk", String.class);
+        System.out.println("消费者调用支付服务(zookeeper)--->result:" + result);
         return result;
     }
 }

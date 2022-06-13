@@ -3,8 +3,9 @@ server:
 
 spring:
   application:
+    #服务别名----注册zookeeper到注册中心名称
     name: cloud-zookeeper-consumer-order
   cloud:
-    #注册到zookeeper地址
     zookeeper:
+      #注册的zookeeper地址
       connect-string: 8.142.189.12:2181

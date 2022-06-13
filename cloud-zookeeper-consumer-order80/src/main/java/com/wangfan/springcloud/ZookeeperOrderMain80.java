@@ -12,7 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient // 该注解用于向使用consul或者zookeeper作为注册中心时注册服务
 public class ZookeeperOrderMain80 {
     public static void main(String[] args) {
         SpringApplication.run(ZookeeperOrderMain80.class, args);
