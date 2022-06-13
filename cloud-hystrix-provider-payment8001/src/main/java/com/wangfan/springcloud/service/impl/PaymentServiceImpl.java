@@ -18,31 +18,44 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {
+
+    /**
+     * 测试正常成功
+     * @param id
+     * @return
+     */
     @Override
     public String paymentInfoOk(Integer id) {
         return "线程池： "+Thread.currentThread().getName()+" paymentInfoOk;id: "+id+"\t";
     }
 
+    //=============服务降价====================
     /**
-     * 设置了两个异常,第一个为注解中的等待超过3秒异常，第二个为除0异常
+     * 设置了两个异常,第一个为注解中的等待超过5秒异常，第二个为除0异常
      * @param id
      * @return
      */
     @Override
-    @HystrixCommand(fallbackMethod = "paymentInfoTimeoutHandler", commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
-    })
+    // 开启Hystrix的降级回调
+    @HystrixCommand(
+            // 降级返回函数
+            fallbackMethod = "paymentInfoTimeoutHandler",
+            // 异常的情况
+            commandProperties = {
+                // 超时时间为3秒钟
+                @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
+            }
+    )
     public String paymentInfoTimeOut(Integer id) {
         int time = 5;
-        // int a = 10/0;
         try {
             TimeUnit.SECONDS.sleep(time);
         }catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "线程池： "+Thread.currentThread().getName()+" paymentTimeOut;id: "+id+"\t"+" 耗时（3秒钟）"+time+"s";
+        return "线程池： "+Thread.currentThread().getName()+" paymentTimeOut;id: "+id+"\t"+" 耗时（5秒钟）"+time+"s";
     }
-
+    // 作为出现异常时的降级回调函数
     public String paymentInfoTimeoutHandler(Integer id) {
         return "线程池： "+Thread.currentThread().getName()+" paymentInfoTimeoutHandler;id: "+id+"\t"+"进入了报错处理";
     }

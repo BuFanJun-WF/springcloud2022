@@ -28,6 +28,7 @@
         <module>cloudalibaba-consumer-nacos-order83</module>
         <module>cloudalibaba-config-nacos-client3377</module>
         <module>cloudalibaba-sentinel-service8401</module>
+        <module>cloud-hystrix-feign-consumer-order80</module>
     </modules>
 
     <!-- 作为父工程打包要设置为pom文件，表示是总的父工程 -->
