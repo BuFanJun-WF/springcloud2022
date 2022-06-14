@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableEurekaClient // 作为客户端向eureka注册
 public class GateWayMain9527 {
 
     public static void main(String[] args) {
