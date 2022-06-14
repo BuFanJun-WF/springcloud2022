@@ -30,7 +30,7 @@ public class OrderController {
     // public static final String PAYMENT_URL = "http://localhost:8001";
 
     // 通过在eureka上注册过的微服务名称调用
-    public static final String PAYMENT_URL = "http://CLOUD-EUREKA-PAYMENT-SERVICE";
+    public static final String PAYMENT_URL = "http://cloud-eureka-payment-service";
 
     @Resource
     private RestTemplate restTemplate;
@@ -63,6 +63,14 @@ public class OrderController {
         URI uri = serviceInstance.getUri();
 
         return restTemplate.getForObject(uri+"/payment/lb", String.class);
+    }
+
+    // ====================> zipkin+sleuth
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin()
+    {
+        String result = restTemplate.getForObject("http://localhost:8001"+"/payment/zipkin/", String.class);
+        return result;
     }
 
 }
