@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConfigClientController {
 
     /**
-     * 表示在Nacos配置环境中，获取里面的配置文件别名为"${config.info}"
+     * 表示在Nacos配置环境中，获取里面的配置文件别中设置有的"${config.info}"
      */
     @Value("${config.info}")
     private String configInfo;
