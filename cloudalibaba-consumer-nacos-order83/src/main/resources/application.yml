@@ -9,7 +9,7 @@ spring:
       discovery:
         server-addr: localhost:8848
 
-# 消费者将要访问的服务提供者的微服务
+# 消费者将要访问的服务提供者的微服务(注册成功进nacos的微服务提供者)
 service-url:
   nacos-user-service: http://nacos-payment-provider
 

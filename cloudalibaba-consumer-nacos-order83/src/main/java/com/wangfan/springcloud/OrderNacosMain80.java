@@ -12,7 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient // 被注册到注册中心
 public class OrderNacosMain80 {
     public static void main(String[] args) {
         SpringApplication.run(OrderNacosMain80.class, args);

@@ -12,7 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient // 被注册为客户端
 public class AlibabaPaymentMain9001 {
     public static void main(String[] args) {
         SpringApplication.run(AlibabaPaymentMain9001.class, args);
