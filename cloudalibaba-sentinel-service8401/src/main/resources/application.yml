@@ -7,8 +7,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        #Nacos服务注册中心地址,也就是8401要注册到8848中
-        server-addr: localhost:8848
+        # Nacos服务注册中心地址,也就是8401要注册到8848中
+        # server-addr: localhost:8848
+        server-addr: localhost:1111
     sentinel:
       transport:
         #配置Sentinel dashboard地址，也就是8080会监控8401

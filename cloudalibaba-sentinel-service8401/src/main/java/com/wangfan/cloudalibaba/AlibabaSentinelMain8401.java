@@ -12,6 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 
 @SpringBootApplication
+// 表示到nacos中注册为客户端
 @EnableDiscoveryClient
 public class AlibabaSentinelMain8401 {
     public static void main(String[] args) {
